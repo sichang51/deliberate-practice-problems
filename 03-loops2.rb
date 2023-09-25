@@ -117,3 +117,16 @@ while index < old_hash.length
 end
 p new_array
 
+# 10 Start with an array of numbers and create a new array with each number converted into a string.
+#    For example, [1, 2, 3] becomes ["1", "2", "3"]
+
+numbers = [5, 1, 0]
+string_numbers = []
+
+index = 0
+while index < numbers.length
+    number = numbers[index]
+    string_numbers << number.to_s
+    index = index + 1
+end
+p string_numbers
