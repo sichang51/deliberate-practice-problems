@@ -670,3 +670,67 @@ strings.each do |string|
   combined = combined + string
 end
 p combined
+
+# 3 Start with an array of hashes and compute the sum of the prices (from the :price key).
+# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes 105.
+
+hashes = [{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }]
+sum = 0
+hashes.each do |hash|
+  sum += hash[:price]
+end
+p sum
+
+# 4 Start with an array of numbers and compute the the minumum number.
+# For example, [5, 10, 8, 3, 9] becomes 3.
+
+numbers = [5, 10, 8, 3, 9]
+mini_num = numbers[0]
+numbers.each do |number|
+  if number < mini_num
+    mini_num = number
+  end
+end
+p mini_num
+
+# 5 Start with an array of strings and compute the total length of all the strings.
+# For example, ["volleyball", "basketball", "badminton"] becomes 29.
+
+strings = ["volleyball", "basketball", "badminton"]
+letter_count = 0
+strings.each do |string|
+  letter_count += string.length
+end
+p letter_count
+
+# 6 Start with an array of hashes and find the hash with the lowest price (from the :price key).
+# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "pencil", price: 1}.
+
+array_hashes = [{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }]
+lowest_price = array_hashes[0]
+array_hashes.each do |hash|
+  if hash[:price] < lowest_price[:price]
+    lowest_price = hash
+  end
+end
+p lowest_price
+
+# 7 Start with an array of numbers and compute product of all the numbers.
+# For example, [5, 10, 8, 3] becomes 1200.
+
+numbers = [5, 10, 8, 3]
+product = 1
+numbers.each do |number|
+  product = product * number
+end
+p product
+
+# 8 Start with an array of strings and combine them all into a single string, separated by dashes.
+# For example, ["volleyball", "basketball", "badminton"] becomes "-volleyball-basketball-badminton-".
+
+array = ["volleyball", "basketball", "badminton"]
+string = "-"
+array.each do |words|
+  string += "#{words}-"
+end
+p string
