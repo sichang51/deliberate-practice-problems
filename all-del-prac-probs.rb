@@ -650,3 +650,23 @@ end
 p odds
 
 # 03-loops4.md---------------------------------------------------------------------------------------------
+
+# 1 Start with an array of numbers and compute the sum of all the numbers.
+# For example, [5, 10, 8, 3] becomes 26.
+
+numbers = [5, 10, 8, 3]
+sum = 0
+numbers.each do |number|
+  sum << sum + number
+end
+p sum
+
+# 2 Start with an array of strings and combine them all into a single string.
+# For example, ["volleyball", "basketball", "badminton"] becomes "volleyballbasketballbadminton".
+
+strings = ["volleyball", "basketball", "badminton"]
+combined = ""
+strings.each do |string|
+  combined = combined + string
+end
+p combined
