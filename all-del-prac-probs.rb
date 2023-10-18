@@ -734,3 +734,39 @@ array.each do |words|
   string += "#{words}-"
 end
 p string
+
+# 9 Start with an array of hashes and find the hash with the shortest name (from the :name key).
+# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "book", price: 4}.
+
+array_hashes = [{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }]
+short_name = array_hashes[0]
+array_hashes.each do |words|
+  if words[:name].length < short_name[:name].length
+    short_name = words
+  end
+end
+p short_name
+
+# 10 Start with an array of numbers and compute the maximum number.
+# For example, [5, 10, 8, 3] becomes 10.
+
+numbers = [5, 10, 8, 3]
+max_num = numbers[0]
+numbers.each do |num|
+  if num > max_num
+    max_num = num
+  end
+end
+p max_num
+
+# 03-loops5.md-----------------------------------------------------------------------------------------------
+
+# 1 Use a nested loop to convert an array of number pairs into a single flattened array.
+# For example, [[1, 3], [8, 9], [2, 16]] becomes [1, 3, 8, 9, 2, 16].
+
+number_pairs = [[1, 3], [8, 9], [2, 16]]
+flat_array = []
+number_pairs.each do |number|
+  flat_array << number
+end
+p flat_array
