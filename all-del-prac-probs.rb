@@ -914,139 +914,758 @@
 # array[1] = 51
 # p array
 
-# 3 Create an array to store 5 numbers. Then print out each number on separate lines with a while loop.
+# # 3 Create an array to store 5 numbers. Then print out each number on separate lines with a while loop.
 
-array = [51, 33, 50, 40, 99]
-index = 0
-while index < array.length
-  puts array[index]
-  index += 1
+# array = [51, 33, 50, 40, 99]
+# index = 0
+# while index < array.length
+#   puts array[index]
+#   index += 1
+# end
+
+# # 4 Create an array to store 1 number. Then add three more numbers to the array and print the array on one line.
+
+# number = [51]
+# number.push(50)
+# number.push(89)
+# number.push(2)
+# p number
+
+# # 5 Create an array to store 3 strings with lower case letters. Then change the third string to have all capital letters and print the array on one line.
+
+# strings = ["ruby", "javascript", "python"]
+# strings[2] = strings[2].upcase
+# p strings
+
+# # 6 Create an array to store 3 names. Then print out each name on separate lines with a while loop.
+
+# names = ["sherman", "john", "alicia"]
+# index = 0
+# while index < names.length
+#   puts names[index]
+#   index += 1
+# end
+
+# # 7 Create an array to store 2 strings. Then add one string to the array and print the array on one line.
+
+# strings = ["vscode", "chrome"]
+# strings.push ("youtube")
+# p strings
+
+# # 8 Create an array to store 5 numbers. Then change the first number to 10 times its original value and print the array on one line.
+
+# numbers = [23, 5, 90, 56, 99]
+# numbers[0] = numbers[0] * 10
+# p numbers
+
+# # 9 Create an array to store 2 numbers. Then print out each number on separate lines with a while loop.
+
+# numbers = [25, 50]
+# numbers.each do |number|
+#   p number
+# end
+
+# # 10 Create an array to store names of 3 different countries. Then add one more country and print the array one line.
+
+# countries = ["US", "Korea", "Japan"]
+# countries.push("Europe")
+# p countries
+
+# # 04-arrays-hashes2.md-------------------------------------------------------------------------------------
+
+# # 1 Make a hash to store a person's first name, last name, and email address. Then print each attribute on separate lines.
+
+# person = { "first_name" => "alicia", "last_name" => "keys", "email" => "keys@alicia.com" }
+# p person["first_name"]
+# p person["last_name"]
+# p person["email"]
+
+# # 2 Make an array of hashes to store the first name and last name for 3 different people. Then print out the first person's info.
+
+# people = [
+#   { "first_name" => "Michael", "last_name" => "Jordan" },
+#   { "first_name" => "Larry", "last_name" => "Bird" },
+#   { "first_name" => "Shaq", "last_name" => "Oneill" },
+# ]
+# p people[0]
+# p people[0]["first_name"]
+# p people[0]["last_name"]
+
+# # 3 Make a hash to store prices for 3 different menu items. Then add a new menu item and price and print the hash to see the result.
+
+# menu_items = { "fries" => 3, "burger" => 6, "burrito" => 8 }
+# menu_items["soda"] = 2
+# p menu_items
+
+# # 4 Make a hash to store a book's title, author, number of pages, and language. Then print each attribute on separate lines.
+
+# books = { "title" => "IT", "author" => "Stephen King", "pages" => 245, "language" => "english" }
+# p books["title"]
+# p books["author"]
+# p books["pages"]
+# p books["language"]
+
+# # 5 Make an array of hashes to store the title and author for 3 different books. Then print out the third book's author.
+
+# books = [
+#   { "title" => "IT", "author" => "Stephen King" },
+#   { "title" => "watever", "author" => "whoknows" },
+#   { "title" => "unknown", "author" => "cruz" },
+# ]
+# p books[2]["author"]
+
+# # 6 Make a hash to store 3 different states and their captitals. Then add a new state and capital and print the hash to see the result.
+
+# capitals = { "california" => "sacramento", "texas" => "austin", "colorado" => "denver" }
+# capitals["massachusetts"] = "boston"
+# p capitals
+
+# # 7 Make a hash to store a laptop's brand, model, and year. Then print each attribute on separate lines.
+
+# laptop = { "brand" => "apple", "model" => "macbook pro", "year" => 2023 }
+# p laptop["brand"]
+# p laptop["model"]
+# p laptop["year"]
+
+# # 8 Make an array of hashes to store the brand and model for 3 different laptops. Then print out the second laptop's model.
+
+# laptops = [
+#   { "brand" => "apple", "model" => "macbook pro", "year" => 2023 },
+#   { "brand" => "dell", "model" => "inspiron", "year" => 2000 },
+#   { "brand" => "microsoft", "model" => "surface book", "year" => 2018 },
+# ]
+# p laptops[1]["model"]
+
+# # 9 Make a hash to store definitions for 2 different words. Then add a new word and definition and print the hash to see the result.
+
+# definitions = { "good" => "righteousness", "bad" => "unpleasant" }
+# definitions["ugly"] = "repulsive"
+# p definitions
+
+# # 10 Make a hash to store a shirt's brand, color, and size. Then print each attribute on separate lines.
+
+# shirt = { "brand" => "RVCA", "color" => "black", "size" => "large" }
+# p shirt["brand"]
+# p shirt["color"]
+# p shirt["size"]
+
+# # 04-arrays-hashes3.md---------------------------------------------------------------------------------------
+
+# # 1 Convert an array of arrays into a hash.
+# # For example, [[1, 3], [8, 9], [2, 16]] becomes {1 => 3, 8 => 9, 2 => 16}.
+
+# numbers_array = [[1, 3], [8, 9], [2, 16]]
+# new_hash = {}
+# numbers_array.each do |number|
+#   key = number[0]
+#   value = number[1]
+#   new_hash[key] = value
+# end
+# p new_hash
+
+# # 2 Convert an array of hashes into a hash using the :id key from the array's hashes as the keys in the new hash.
+# # For example, [{id: 1, color: "blue", price: 32}, {id: 2, color: "red", price: 12}] becomes {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}.
+
+# array_hashes = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
+# new_hash = {}
+# array_hashes.each do |hash|
+#   new_hash[hash[:id]] = hash
+# end
+# p new_hash
+
+# # 3 Convert a string into a hash with keys for each letter in the string and values for the number of times the letter appears in the string.
+# # For example, "bookkeeper" becomes {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}.
+
+# string = "bookkeeper"
+# new_hash = {}
+# index = 0
+# while index < string.length
+#   letter = string[index]
+#   if new_hash[letter] == nil
+#     new_hash[letter] = 0
+#   end
+#   new_hash[letter] += 1
+#   index += 1
+# end
+# p new_hash
+
+# # 4 Convert a hash into an array of arrays.
+# # For example, {"chair" => 100, "book" => 14} becomes [["chair", 100], ["book", 14]].
+
+# hash = { "chair" => 100, "book" => 14 }
+# new_array = []
+# hash.each do |key, value|
+#   new_array << [key, value]
+# end
+# p new_array
+
+# # 5 Convert a hash into an array of hashes using the keys from each hash as the :id key in each of the array's hashes.
+# # For example, {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}} becomes [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}].
+
+# hashes = { 321 => { name: "Alice", age: 31 }, 322 => { name: "Maria", age: 27 } }
+# new_array = []
+# hashes.each do |id, person|
+#   person[:id] = id
+#   new_array << person
+# end
+# p new_array
+
+# # 6 Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
+# # For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
+
+# strings = ["do", "or", "do", "not"]
+# hash = {}
+# index = 0
+# while index < strings.length
+#   word = strings[index]
+#   if hash[word] == nil
+#     hash[word] = 0
+#   end
+#   hash[word] += 1
+#   index += 1
+# end
+# p hash
+
+# # 7 Convert a hash into a flat array containing all the hash’s keys and values.
+# # For example, {"a" => 1, "b" => 2, "c" => 3, "d" => 4} becomes ["a", 1, "b", 2, "c", 3, "d", 4].
+
+# hash = { "a" => 1, "b" => 2, "c" => 3, "d" => 4 }
+# array = []
+# hash.each do |key, value|
+#   array << key
+#   array << value
+# end
+# p array
+
+# # 8 Combine data from a hash with names and prices and an array of hashes with names, colors, and weights to make a new hash.
+# # For example, {"chair" => 75, "book" => 15} and [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}] becomes {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
+
+# hash1 = { "chair" => 75, "book" => 15 }
+# array_hashes = [{ name: "chair", color: "red", weight: 10 }, { name: "book", color: "black", weight: 1 }]
+# new_hash = {}
+# array_hashes.each do |item|
+#   name = item[:name]
+#   color = item[:color]
+#   weight = item[:weight]
+#   price = hash1[name]
+#   new_hash[name] = { price: price, color: color, weight: weight }
+# end
+# p new_hash
+
+# # 9 Convert an array of hashes into a hash of arrays, using the author as keys and the titles as values.
+# # For example, [{author: "Jeff Smith", title: "Bone"}, {author: "George Orwell", title: "1984"}, {author: "Jeff Smith", title: "RASL"}] becomes {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}.
+
+# array_hashes = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
+# new_hash = {}
+# array_hashes.each do |hash|
+#   author = hash[:author]
+#   title = hash[:title]
+#   if new_hash[author] == nil
+#     new_hash[author] = []
+#   end
+#   new_hash[author] << title
+# end
+# p new_hash
+
+# 10 Given a hash, create a new hash that has the keys and values switched.
+# For example, {"a" => 1, "b" => 2, "c" => 3} becomes {1 => "a", 2 => "b", 3 => "c"}.
+
+hash = { "a" => 1, "b" => 2, "c" => 3 }
+new_hash = {}
+hash.each do |key, value|
+  new_hash[value] = key
+end
+p new_hash
+
+# 05-custom-methods-classes1.md--------------------------------------------------------------------------------------------
+
+# 1 Write a method that takes in a number and returns the number times two. Then run the method and print the result.
+
+def multiply(number)
+  return number * 2
 end
 
-# 4 Create an array to store 1 number. Then add three more numbers to the array and print the array on one line.
+p multiply(9)
 
-number = [51]
-number.push(50)
-number.push(89)
-number.push(2)
-p number
+# 2 Write a method that takes in a string and returns the string with all capital letters. Then run the method and print the result.
 
-# 5 Create an array to store 3 strings with lower case letters. Then change the third string to have all capital letters and print the array on one line.
-
-strings = ["ruby", "javascript", "python"]
-strings[2] = strings[2].upcase
-p strings
-
-# 6 Create an array to store 3 names. Then print out each name on separate lines with a while loop.
-
-names = ["sherman", "john", "alicia"]
-index = 0
-while index < names.length
-  puts names[index]
-  index += 1
+def caps(string)
+  return string.upcase
 end
 
-# 7 Create an array to store 2 strings. Then add one string to the array and print the array on one line.
+p caps("method")
 
-strings = ["vscode", "chrome"]
-strings.push ("youtube")
-p strings
+# 3 Write a method that takes in two numbers and returns the first number subtracted by the second. Then run the method and print the result.
 
-# 8 Create an array to store 5 numbers. Then change the first number to 10 times its original value and print the array on one line.
-
-numbers = [23, 5, 90, 56, 99]
-numbers[0] = numbers[0] * 10
-p numbers
-
-# 9 Create an array to store 2 numbers. Then print out each number on separate lines with a while loop.
-
-numbers = [25, 50]
-numbers.each do |number|
-  p number
+def difference(number1, number2)
+  return number1 - number2
 end
 
-# 10 Create an array to store names of 3 different countries. Then add one more country and print the array one line.
+p difference(10, 8)
 
-countries = ["US", "Korea", "Japan"]
-countries.push("Europe")
-p countries
+# 4 Write a method that takes in a number and returns the number times itself. Then run the method and print the result.
 
-# 04-arrays-hashes2.md-------------------------------------------------------------------------------------
+def squared(number)
+  return number * number
+end
 
-# 1 Make a hash to store a person's first name, last name, and email address. Then print each attribute on separate lines.
+p squared(10)
 
-person = { "first_name" => "alicia", "last_name" => "keys", "email" => "keys@alicia.com" }
-p person["first_name"]
-p person["last_name"]
-p person["email"]
+# 5 Write a method that takes in a string and returns the first letter of the string. Then run the method and print the result.
 
-# 2 Make an array of hashes to store the first name and last name for 3 different people. Then print out the first person's info.
+def first_letter(string)
+  return string[0]
+end
 
-people = [
-  { "first_name" => "Michael", "last_name" => "Jordan" },
-  { "first_name" => "Larry", "last_name" => "Bird" },
-  { "first_name" => "Shaq", "last_name" => "Oneill" },
-]
-p people[0]
-p people[0]["first_name"]
-p people[0]["last_name"]
+p first_letter("javascript")
 
-# 3 Make a hash to store prices for 3 different menu items. Then add a new menu item and price and print the hash to see the result.
+# 6 Write a method that takes in three strings and returns a string that combines all three strings with spaces in between. Then run the method and print the result.
 
-menu_items = { "fries" => 3, "burger" => 6, "burrito" => 8 }
-menu_items["soda"] = 2
-p menu_items
+def combines(string1, string2, string3)
+  return string1 + " " + string2 + " " + string3
+  #or return "#{string1} #{string2} #{string3}"
+end
 
-# 4 Make a hash to store a book's title, author, number of pages, and language. Then print each attribute on separate lines.
+p combines("Run", "the", "method")
 
-books = { "title" => "IT", "author" => "Stephen King", "pages" => 245, "language" => "english" }
-p books["title"]
-p books["author"]
-p books["pages"]
-p books["language"]
+# 7 Write a method that takes in a number and returns the number as a string. Then run the method and print the result.
 
-# 5 Make an array of hashes to store the title and author for 3 different books. Then print out the third book's author.
+def chg_string(number)
+  return number.to_s
+end
 
-books = [
-  { "title" => "IT", "author" => "Stephen King" },
-  { "title" => "watever", "author" => "whoknows" },
-  { "title" => "unknown", "author" => "cruz" },
-]
-p books[2]["author"]
+p chg_string(76)
 
-# 6 Make a hash to store 3 different states and their captitals. Then add a new state and capital and print the hash to see the result.
+# 8 Write a method that takes in a string and returns the string repeated 5 times. Then run the method and print the result.
 
-capitals = { "california" => "sacramento", "texas" => "austin", "colorado" => "denver" }
-capitals["massachusetts"] = "boston"
-p capitals
+def repeater(string)
+  return string * 5
+end
 
-# 7 Make a hash to store a laptop's brand, model, and year. Then print each attribute on separate lines.
+p repeater("do it")
 
-laptop = { "brand" => "apple", "model" => "macbook pro", "year" => 2023 }
-p laptop["brand"]
-p laptop["model"]
-p laptop["year"]
+# 9 Write a method that takes in 3 numbers and returns the average (the sum divided by 3.0). Then run the method and print the result.
 
-# 8 Make an array of hashes to store the brand and model for 3 different laptops. Then print out the second laptop's model.
+def average(number1, number2, number3)
+  return (number1 + number2 + number3) / 3.0
+end
 
-laptops = [
-  { "brand" => "apple", "model" => "macbook pro", "year" => 2023 },
-  { "brand" => "dell", "model" => "inspiron", "year" => 2000 },
-  { "brand" => "microsoft", "model" => "surface book", "year" => 2018 },
-]
-p laptops[1]["model"]
+p average(99, 33, 31)
 
-# 9 Make a hash to store definitions for 2 different words. Then add a new word and definition and print the hash to see the result.
+# 10 Write a method that takes in a number and returns the number times 10 plus 30. Then run the method and print the result.
 
-definitions = { "good" => "righteousness", "bad" => "unpleasant" }
-definitions["ugly"] = "repulsive"
-p definitions
+def math(number)
+  return (number * 10) + 30
+end
 
-# 10 Make a hash to store a shirt's brand, color, and size. Then print each attribute on separate lines.
+p math(100)
 
-shirt = { "brand" => "RVCA", "color" => "black", "size" => "large" }
-p shirt["brand"]
-p shirt["color"]
-p shirt["size"]
+# 05-custom-methods-classes2.md---------------------------------------------------------------------------------------------------
 
-# 04-arrays-hashes3.md---------------------------------------------------------------------------------------
+# 1 Write a Song class with attributes for name, artist, and duration.
+
+class Song
+  def initialize(name, artist, duration)
+    @name = name
+    @artist = artist
+    @duration = duration
+  end
+end
+
+song = Song.new("More Than Words", "Extreme", "4:14")
+p song
+
+# 2 Write a Rectangle class with attributes for width and height.
+
+class Rectangle
+  def initialize(width, height)
+    @width = width
+    @height = height
+  end
+end
+
+rectangle = Rectangle.new(25, 100)
+pp rectangle
+
+# 3 Write a Person class with attributes for name and age.
+
+class Person
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+end
+
+person = Person.new("Megan", 37)
+p person
+
+# 4 Write a Location class with attributes for latitude and longitude.
+
+class Location
+  def initialize(lat, long)
+    @latitude = lat
+    @longitude = long
+  end
+end
+
+location = Location.new(34.545, 105.564)
+p location
+
+# 5 Write an Account class with attributes for name and balance.
+
+class Account
+  def initialize(name, balance)
+    @name = name
+    @balance = balance
+  end
+end
+
+account = Account.new("Checking", 5450)
+p account
+
+# 6 Write a Movie class with attributes for title, director, and year.
+
+class Movie
+  def initialize(title, director, year)
+    @title = title
+    @director = director
+    @year = year
+  end
+end
+
+movie = Movie.new("Blood In Blood Out", "don't know", 1994)
+p movie
+
+# 7 Write a Car class with attributes for make, model, year, and color.
+
+class Car
+  def initialize(make, model, year, color)
+    @make = make
+    @model = model
+    @year = year
+    @color = color
+  end
+end
+
+car = Car.new("Ford", "F-150", 2018, "Black")
+p car
+
+# 8 Write a Point class with attributes for x, y, and z coordinates.
+
+class Point
+  def initialize(x, y, z)
+    @x = x
+    @y = y
+    @z = z
+  end
+end
+
+point = Point.new(9, 0, 3)
+p point
+
+# 9 Write a Book class with attributes for title, author, and year.
+
+class Book
+  def initialize(title, author, year)
+    @title = title
+    @author = author
+    @year = year
+  end
+end
+
+book = Book.new("IT", "Stephen King", 1980)
+p book
+
+# 10 Write a Plant class with attributes for name, size, and price.
+
+class Plant
+  def initialize(name, size, price)
+    @name = name
+    @size = size
+    @price = price
+  end
+end
+
+plant = Plant.new("plumeria", "medium", 5)
+p plant
+
+# 05-custom-methods-classes3.md?----------------------------------------------------------------------------------------
+
+# 1 Write a Song class with attributes and reader/writer methods for name, artist, and duration. Then write a method that prints the name, artist, and duration in a single sentence.
+
+class Song
+  attr_reader :name, :artist, :duration
+  attr_writer :name, :artist, :duration
+
+  def initialize(name, artist, duration)
+    @name = name
+    @artist = artist
+    @duration = duration
+  end
+
+  def print_info
+    puts "I'm singing to #{name} by #{artist} for #{duration} long."
+  end
+end
+
+song = Song.new("Save Me", "Jelly Roll", "3:56")
+song.print_info
+
+# 2 Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.
+
+class Rectangle
+  attr_reader :width, :height
+  attr_writer :width, :height
+
+  def initialize(width, height)
+    @width = width
+    @height = height
+  end
+
+  def area
+    width * height
+  end
+end
+
+rectangle = Rectangle.new(25, 100)
+rectangle.area
+puts "The area of #{rectangle.area}."
+
+# 3 Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
+
+class Person
+  attr_reader :name, :age
+  attr_writer :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def uppercase
+    name.upcase
+  end
+end
+
+person = Person.new("Chester Bennington", 41)
+puts person.uppercase
+
+# 4 Write a Coordinate class with attributes and reader/writer methods for latitude and longitude. Then write a method that prints out the latitude and longitude in a single sentence.
+
+class Coordinate
+  attr_reader :latitude, :longitude
+  attr_writer :latitude, :longitude
+
+  def initialize(latitude, longitude)
+    @latitude = latitude
+    @longitude = longitude
+  end
+
+  def print_out
+    puts "The coordinates for SF is #{latitude} and #{longitude}"
+  end
+end
+
+coordinate = Coordinate.new(56.4546, 46.5464)
+coordinate.print_out
+
+# 5 Write an Account class with attributes and reader/writer methods for name and balance. Then write a method that prints a warning if the balance is below $100.
+
+class Account
+  attr_reader :name, :balance
+  attr_writer :name, :balance
+
+  def initialize(name, balance)
+    @name = name
+    @balance = balance
+  end
+
+  def warning
+    if balance < 100
+      puts "Warning!!! Your balance is below $100."
+    end
+  end
+end
+
+account = Account.new("Simon", 97)
+account.warning
+
+# 7 Write a Car class with attributes and reader/writer methods for make, model, year, and color. Then write a method that returns the make and model as a single sentence in all lowercase letters.
+
+class Car
+  attr_reader :make, :model, :year, :color
+  attr_writer :make, :model, :year, :color
+
+  def initialize(make, model, year, color)
+    @make = make
+    @model = model
+    @year = year
+    @color = color
+  end
+
+  def lowercase
+    puts "My car is #{make.downcase} and #{model.downcase}."
+  end
+end
+
+car = Car.new("BMW", "X3", "2013", "BLACK")
+car.lowercase
+
+# 8 Write a Point class with attributes and reader/writer methods for x, y, and z coordinates. Then write a method that returns true if all 3 numbers are positive, otherwise it returns false.
+
+class Point
+  attr_reader :x, :y, :z
+  attr_writer :x, :y, :z
+
+  def initialize(x, y, z)
+    @x = x
+    @y = y
+    @z = z
+  end
+
+  def boolean
+    if x > 0 && y > 0 && z > 0
+      puts "true"
+    else
+      puts "false"
+    end
+  end
+end
+
+point = Point.new(5, 4, 9)
+point.boolean
+
+# 9 Write a Book class with attributes and reader/writer methods for title, author, and year. Then write a method that returns "Classic" if the book is older than 2000, otherwise it returns "Modern".
+
+class Book
+  attr_reader :title, :author, :year
+  attr_writer :title, :author, :year
+
+  def initialize(title, author, year)
+    @title = title
+    @author = author
+    @year = year
+  end
+
+  def book_age
+    if year < 2000
+      puts "Classic"
+    else
+      puts "Modern"
+    end
+  end
+end
+
+book = Book.new("Bible", "GOD", 1400)
+book.book_age
+
+# 10 Write a Plant class with attributes and reader/writer methods for name, size, and price. Then write a method that prints out the attributes in a single sentence.
+
+class Plant
+  attr_reader :name, :size, :price
+  attr_writer :name, :size, :price
+
+  def initialize(name, size, price)
+    @name = name
+    @size = size
+    @price = price
+  end
+
+  def print_out
+    puts "I bought a #{size} #{name} for #{price}."
+  end
+end
+
+plant = Plant.new("Jalapeno", "medium", 5)
+plant.print_out
+
+# 05-custom-methods-classes4.md-------------------------------------------------------------------------------------------
+
+# 1 Write a ShoppingCart class that stores an array of items with methods to add an item, remove an item, and display all the items.
+
+class ShoppingCart
+  def initialize
+    @items = []
+  end
+
+  def add_item(item)
+    @items.push(item)
+  end
+
+  def remove_item(item)
+    @items.delete(item)
+  end
+
+  def display_item
+    @items.each { |item| puts "- #{item}" }
+  end
+end
+
+cart = ShoppingCart.new
+cart.add_item("apple")
+cart.add_item("rice")
+cart.add_item("water")
+cart.display_item
+cart.remove_item("rice")
+cart.display_item
+
+# 2 Write a Product class that stores the name, price, and metadata, where metadata is a hash that stores additional information about the product.
+
+class Product
+  attr_reader :name, :price, :metadata
+  attr_writer :name, :price, :metadata
+
+  def initialize(name, price, metadata)
+    @name = name
+    @price = price
+    @metadata = metadata
+  end
+end
+
+product = Product.new("laptop", 1500, { brand: "apple", color: "dark grey", processor: "M2" })
+p "Name: #{product.name}"
+p "Price: #{product.price}"
+p "Metadata: #{product.metadata}"
+p "Brand: #{product.metadata[:brand]}"
+p "Color: #{product.metadata[:color]}"
+p "Processor: #{product.metadata[:processor]}"
+
+# 3 Write a Playlist class that stores a name and an array of songs with methods to add a song, remove a song, shuffle the songs into a random order, and display all the songs.
+
+class Playlist
+  attr_reader :name, :song
+  attr_writer :name, :song
+
+  def initialize(name)
+    @name = name
+    @song = []
+  end
+
+  def add_song(song)
+    @song << (song)
+  end
+
+  def remove_song(song)
+    @song.delete(song)
+  end
+
+  def shuffle_song
+    @song.shuffle!
+  end
+
+  def display_song
+    puts "Playlist: #{name}"
+    puts "Songs in the playlist:"
+    @song.each { |song| puts "- #{song}" }
+  end
+end
+
+playlist = Playlist.new("My Playlist")
+playlist.add_song("In the End")
+playlist.add_song("Numb")
+playlist.add_song("Crawling")
+playlist.display_song
+playlist.remove_song("Numb")
+playlist.display_song
+playlist.shuffle_song
+playlist.display_song
