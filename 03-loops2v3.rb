@@ -36,3 +36,17 @@ array_hashes.each do |key|
   new_array << key[:name]
 end
 p new_array
+
+# 4 Start with an array of numbers and create a new array with each number plus 7.
+# For example, [1, 2, 3] becomes [8, 9, 10].
+
+numbers = [1, 2, 3]
+new_numbers = []
+index = 0
+while index < numbers.length
+  number = numbers[index] + 7
+  new_numbers << number
+  index += 1
+end
+
+p new_numbers
