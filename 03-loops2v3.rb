@@ -50,3 +50,18 @@ while index < numbers.length
 end
 
 p new_numbers
+
+# 5 Start with an array of strings and create a new array with each string's length.
+# For example, ["hello", "goodbye"] becomes [5, 7].
+
+def strings(input_array)
+  new_array = []
+  index = 0
+  input_array.each do
+    new_array << input_array[index].length
+    index += 1
+  end
+  return new_array
+end
+
+p strings(["hello", "goodbye"])
