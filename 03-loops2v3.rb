@@ -171,4 +171,24 @@ end
 p people([{ name: "Alice", age: 27 }, { name: "Blane", age: 16 }])
 
 # 10 Start with an array of numbers and create a new array with each number converted into a string.
-For example, [1, 2, 3] becomes ["1", "2", "3"].
+# For example, [1, 2, 3] becomes ["1", "2", "3"].
+
+numbers = [1, 2, 3]
+strings = []
+index = 0
+while index < numbers.length
+  number = numbers[index]
+  strings << number.to_s
+  index += 1
+end
+p strings
+
+def numbers(input_array)
+  strings = []
+  input_array.each do |number|
+    strings << number.to_s
+  end
+  return strings
+end
+
+p numbers([1, 2, 3])
