@@ -138,5 +138,114 @@ p strings(["a", "man", "a", "plan", "a", "canal", "panama"])
 products = [{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }]
 short_name = []
 index = 0
-while index += 1
+while index < products.length
+  if products[index][:name].length < 6
+    short_name << products[index]
+  end
+  index += 1
 end
+p short_name
+
+def products(input_array)
+  short_name = []
+  input_array.each do |product|
+    if product[:name].length < 6
+      short_name << product
+    end
+  end
+  return short_name
+end
+
+p products([{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }])
+
+# 7 Start with an array of numbers and create a new array with only the numbers less than 10.
+# For example, [8, 23, 0, 44, 1980, 3] becomes [8, 0, 3].
+
+numbers = [8, 23, 0, 44, 1980, 3]
+small_numbers = []
+index = 0
+while index < numbers.length
+  if numbers[index] < 10
+    small_numbers << numbers[index]
+  end
+  index += 1
+end
+p small_numbers
+
+# 8 Start with an array of strings and create a new array with only the strings that don't start with the letter "b".
+# For example, ["big", "little", "good", "bad"] becomes ["little", "good"].
+
+strings = ["big", "little", "good", "bad"]
+new_string = []
+index = 0
+while index < strings.length
+  if strings[index][0] != "b"
+    new_string << strings[index]
+  end
+  index += 1
+end
+p new_string
+
+def strings(input_array)
+  new_string = []
+  input_array.each do |string|
+    if string[0] != "b"
+      new_string << string
+    end
+  end
+  return new_string
+end
+
+p strings(["big", "little", "good", "bad"])
+
+# 9 Start with an array of hashes and create a new array with only the hashes with prices less than 10 (from the :price key).
+# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "pencil", price: 1}, {name: "book", price: 4}].
+
+products = [{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }]
+cheap_products = []
+index = 0
+while index < products.length
+  if products[index][:price] < 10
+    cheap_products << products[index]
+  end
+  index += 1
+end
+p cheap_products
+
+def products(input_array)
+  cheap_products = []
+  input_array.each do |product|
+    if product[:price] < 10
+      cheap_products << product
+    end
+  end
+  return cheap_products
+end
+
+p products([{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }])
+
+# 10 Start with an array of numbers and create a new array with only the odd numbers.
+# For example, [2, 4, 5, 1, 8, 9, 7] becomes [5, 1, 9, 7].
+
+numbers = [2, 4, 5, 1, 8, 9, 7]
+odd_numbers = []
+index = 0
+while index < numbers.length
+  if numbers[index] % 2 == 1
+    odd_numbers << numbers[index]
+  end
+  index += 1
+end
+p odd_numbers
+
+def numbers(input_array)
+  odd_numbers = []
+  input_array.each do |number|
+    if number % 2 == 1
+      odd_numbers << number
+    end
+  end
+  return odd_numbers
+end
+
+p numbers([2, 4, 5, 1, 8, 9, 7])
