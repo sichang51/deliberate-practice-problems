@@ -140,3 +140,91 @@ def products(input_array)
 end
 
 p products([{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }])
+
+# 7 Start with an array of numbers and compute product of all the numbers.
+# For example, [5, 10, 8, 3] becomes 1200.
+
+numbers = [5, 10, 8, 3]
+product = 1
+index = 0
+while index < numbers.length
+  product = product * numbers[index]
+  index += 1
+end
+p product
+
+def numbers(input)
+  product = 1
+  input.each do |number|
+    product = product * number
+  end
+  return product
+end
+
+p numbers([5, 10, 8, 3])
+
+# 8 Start with an array of strings and combine them all into a single string, separated by dashes.
+# For example, ["volleyball", "basketball", "badminton"] becomes "-volleyball-basketball-badminton-".
+
+def strings(input)
+  single = "-"
+  input.each do |string|
+    single = single + string + "-"
+  end
+  return single
+end
+
+p strings(["volleyball", "basketball", "badminton"])
+
+# 9 Start with an array of hashes and find the hash with the shortest name (from the :name key).
+# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "book", price: 4}.
+
+items = [{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }]
+short_name = items[0]
+index = 0
+while index < items.length
+  if items[index][:name].length < short_name[:name].length
+    short_name = items[index]
+  end
+  index += 1
+end
+p short_name
+
+def items(input)
+  short_name = input[0]
+  input.each do |item|
+    if item[:name].length < short_name[:name].length
+      short_name = item
+    end
+  end
+  return short_name
+end
+
+p items([{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }])
+
+# 10 Start with an array of numbers and compute the maximum number.
+# For example, [5, 10, 8, 3] becomes 10.
+
+numbers = [5, 10, 8, 3]
+max = numbers[0]
+index = 0
+while index < numbers.length
+  number = numbers[index]
+  if number > max
+    max = number
+  end
+  index += 1
+end
+p max
+
+def numbers(input)
+  max = input[0]
+  input.each do |number|
+    if number > max
+      max = number
+    end
+  end
+  return max
+end
+
+p numbers([5, 10, 8, 3])
