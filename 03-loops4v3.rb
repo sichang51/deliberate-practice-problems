@@ -41,3 +41,25 @@ def strings(input_array)
 end
 
 p strings(["volleyball", "basketball", "badminton"])
+
+# 3 Start with an array of hashes and compute the sum of the prices (from the :price key).
+# For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes 105.
+
+products = [{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }]
+sum = 0
+index = 0
+while index < products.length
+  sum = sum + products[index][:price]
+  index += 1
+end
+p sum
+
+def products(input_array)
+  sum = 0
+  input_array.each do |product|
+    sum = sum + product[:price]
+  end
+  return sum
+end
+
+p products([{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }])
