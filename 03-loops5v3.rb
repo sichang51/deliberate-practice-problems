@@ -112,3 +112,62 @@ while index1 < first_array.length
   index1 += 1
 end
 p sum
+
+# 7 Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
+# For example, [2, 8, 3] becomes [4, 16, 6, 16, 64, 24, 6, 24, 9].
+
+numbers = [2, 8, 3]
+combo = []
+index1 = 0
+while index1 < numbers.length
+  index2 = 0
+  while index2 < numbers.length
+    combo << numbers[index1] * numbers[index2]
+    index2 += 1
+  end
+  index1 += 1
+end
+p combo
+
+# 8 Use a nested loop to find the largest sum of any two different numbers within an array.
+# For example, [1, 8, 3, 10] becomes 18.
+
+numbers = [1, 8, 3, 10]
+max_sum = numbers[0] + numbers[1]
+index1 = 0
+while index1 < numbers.length
+  index2 = 0
+  while index2 < numbers.length
+    if index1 != index2
+      sum = numbers[index1] + numbers[index2]
+      if sum > max_sum
+        max_sum = sum
+      end
+    end
+    index2 += 1
+  end
+  index1 += 1
+end
+p max_sum
+
+# 9 Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
+# For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
+
+numbers = [2, 5, 3, 1, 0, 7, 11]
+result = false
+index1 = 0
+while index1 < numbers.length
+  number = numbers[index1]
+  index2 = 0
+  while index2 < numbers.length
+    if index1 != index2
+      other_number = numbers[index2]
+      if number + other_number == 10 && result == false
+        result = [number, other_number]
+      end
+    end
+    index2 += 1
+  end
+  index1 += 1
+end
+p result
