@@ -171,3 +171,19 @@ while index1 < numbers.length
   index1 += 1
 end
 p result
+
+#10 Use a nested loop to convert an array of string arrays into a single string.
+# For example, [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]] becomes "amanaplanacanalpanama".
+
+strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+single = ""
+index1 = 0
+while index1 < strings.length
+  index2 = 0
+  while index2 < strings[index1].length
+    single = single + strings[index1][index2]
+    index2 += 1
+  end
+  index1 += 1
+end
+p single
