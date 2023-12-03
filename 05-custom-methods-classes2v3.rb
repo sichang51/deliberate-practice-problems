@@ -10,3 +10,15 @@ end
 
 song = Song.new("Eminem", "Eminem", "4.16")
 pp song
+
+# 2 Write a Rectangle class with attributes for width and height.
+
+class Rectangle
+  def initialize(width, height)
+    @width = width
+    @height = height
+  end
+end
+
+rectangle = Rectangle.new(5, 10)
+p rectangle
